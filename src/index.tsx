@@ -5,8 +5,6 @@ import App from './App'
 import { ChakraProvider } from '@chakra-ui/react'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { BrowserRouter } from 'react-router-dom'
-import { ServiceProvider } from './components/ServiceProvider'
-import { buildServices } from './services'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
@@ -17,9 +15,7 @@ root.render(
         <QueryClientProvider client={client}>
             <ChakraProvider>
                 <BrowserRouter>
-                    <ServiceProvider services={buildServices()}>
-                        <App />
-                    </ServiceProvider>
+                    <App />
                 </BrowserRouter>
             </ChakraProvider>
         </QueryClientProvider>

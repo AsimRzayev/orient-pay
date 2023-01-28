@@ -1,4 +1,6 @@
 export const ROUTES = {
-    HOME: '',
+    HOME: '/home',
     BLOGS: '/blogs',
+    PAYMENTS: '/payments',
+    PAYMENT_ITEM: '/payments/:paymentType',
 }

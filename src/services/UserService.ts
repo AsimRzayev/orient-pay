@@ -1,18 +1,10 @@
-import { HttpClient } from './httpClient'
+import axios from 'axios'
 
-const httpClient = new HttpClient()
+let baseURL: string = 'http://localhost:4000/user'
+export async function getUser() {
+    const res = await axios.get('/hobbies', {
+        baseURL: baseURL,
+    })
 
-export interface IUser {
-    firstName: string
-    lastName: string
-}
-
-export interface IUserService {
-    getUser: () => any
-}
-
-export class UserService implements IUserService {
-    getUser = () => {
-        return httpClient.get('/user')
-    }
+    return res.status
 }

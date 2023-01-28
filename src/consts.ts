@@ -1,0 +1,66 @@
+import { BiMobileAlt, BiWifi, BiHome } from 'react-icons/bi'
+export const paymentList = [
+    {
+        icon: BiMobileAlt,
+        text: 'Mobil Operatorlar',
+        iconBg: 'blue.50',
+        iconColor: 'blue.500',
+        type: 'mobile',
+    },
+    {
+        icon: BiWifi,
+        text: 'İnternet',
+        iconBg: 'red.50',
+        iconColor: 'red.500',
+        type: 'internet',
+    },
+    {
+        icon: BiHome,
+        text: 'Komunal xidmətlər',
+        iconBg: 'orange.50',
+        iconColor: 'orange.500',
+        type: 'mobile',
+    },
+    {
+        icon: BiMobileAlt,
+        text: 'Telefon',
+        iconBg: 'blue.50',
+        iconColor: 'blue.500',
+        type: 'mobile',
+    },
+    {
+        icon: BiMobileAlt,
+        text: 'TV',
+        iconBg: 'pink.50',
+        iconColor: 'pink.500',
+        type: 'mobile',
+    },
+    {
+        icon: BiHome,
+        text: 'İnzibati cərimə ödənişləri',
+        iconBg: 'green.50',
+        iconColor: 'green.500',
+        type: 'mobile',
+    },
+    {
+        icon: BiMobileAlt,
+        text: 'Əyləncə',
+        iconBg: 'pink.50',
+        iconColor: 'pink.500',
+        type: 'mobile',
+    },
+    {
+        icon: BiMobileAlt,
+        text: 'Bank xidmәtlәri, Sığorta',
+        iconBg: 'green.50',
+        iconColor: 'green.500',
+        type: 'mobile',
+    },
+    {
+        icon: BiMobileAlt,
+        text: 'Digər',
+        iconBg: 'blue.50',
+        iconColor: 'blue.500',
+        type: 'else',
+    },
+]

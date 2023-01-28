@@ -1,10 +1,12 @@
-import React from 'react'
 import Footer from './layout/Footer'
-import Header from './layout/Header'
+import Header from './layout/Header/Header'
 import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from './routes'
 import Home from './modules/Home/Home'
 import Blogs from './modules/Blogs/Blogs'
+import Payments from './modules/Payments/Payments'
+import Error from './components/Error'
+import PaymentController from './modules/Payments/PaymentController'
 
 function App() {
     return (
@@ -13,6 +15,13 @@ function App() {
             <Routes>
                 <Route path={ROUTES.HOME} element={<Home />} />
                 <Route path={ROUTES.BLOGS} element={<Blogs />} />
+                <Route path={ROUTES.PAYMENTS} element={<Payments />} />
+                <Route
+                    path={ROUTES.PAYMENT_ITEM}
+                    element={<PaymentController />}
+                />
+
+                <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
         </>
