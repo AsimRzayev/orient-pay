@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": "../src",
+        "target": "es5",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "noUnusedLocals": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "typeRoots": ["./types", "./node_modules/@types"]
+    },
+    "exclude": ["node_modules"]
+}

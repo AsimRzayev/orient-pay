@@ -1,0 +1,12 @@
+{
+    "name": "server",
+    "productName": "ui-chaypay - mock server",
+    "version": "1.0.0",
+    "description": "Mock server for ui-chaypay",
+    "scripts": {
+        "start": "nodemon"
+    },
+    "dependencies": {
+        "reflect-metadata": "^0.1.13"
+    }
+}
