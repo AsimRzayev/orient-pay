@@ -25,20 +25,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 })
 
 app.use('', BASE_ROUTER)
-
-const server = app.listen(port, () => {
+app.listen(port, () => {
     // eslint-disable-next-line no-console
     console.log(`Mock server for orient is running at http://localhost:${port}`)
-
-    process
-        .on('exit', () => {
-            server.close()
-        })
-        .on('SIGINT', () => {
-            server.close()
-            // eslint-disable-next-line no-console
-            console.log(
-                `Mock server which was running at http://localhost:${port} has been closed.`
-            )
-        })
 })

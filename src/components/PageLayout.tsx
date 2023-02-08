@@ -10,34 +10,38 @@ export interface IBreadCrumbs {
 }
 interface IProps {
     children: React.ReactElement
-    breadcrumbs: IBreadCrumbs[]
+    breadcrumbs?: IBreadCrumbs[]
+    title: string
 }
-const PageLayout: React.FC<IProps> = ({ children, breadcrumbs }) => {
+const PageLayout: React.FC<IProps> = ({ children, breadcrumbs, title }) => {
     return (
         <PageContainer>
             <Box py={7}>
-                <Flex columnGap={2} alignItems="center">
-                    {breadcrumbs.map((item, idx) => {
-                        let isLast = idx === breadcrumbs.length - 1
-                        return (
-                            <React.Fragment key={item.url}>
-                                <Link
-                                    as={RouterLink}
-                                    to={item.url}
-                                    color={isLast ? 'gray.900' : 'gray.500'}
-                                >
-                                    {item.text}
-                                </Link>
-                                {!isLast && breadcrumbs.length > 1 && (
-                                    <BsChevronRight />
-                                )}
-                            </React.Fragment>
-                        )
-                    })}
-                </Flex>
+                {breadcrumbs && (
+                    <Flex columnGap={2} alignItems="center">
+                        {breadcrumbs.map((item, idx) => {
+                            let isLast = idx === breadcrumbs.length - 1
+                            return (
+                                <React.Fragment key={item.url}>
+                                    <Link
+                                        as={RouterLink}
+                                        to={item.url}
+                                        color={isLast ? 'gray.900' : 'gray.500'}
+                                    >
+                                        {item.text}
+                                    </Link>
+                                    {!isLast && breadcrumbs.length > 1 && (
+                                        <BsChevronRight />
+                                    )}
+                                </React.Fragment>
+                            )
+                        })}
+                    </Flex>
+                )}
+
                 <Box mt={2} mb={7}>
                     <Heading mb={2} fontWeight="medium" fontSize="4xl">
-                        Ödənişlər
+                        {title}
                     </Heading>
                     <Box
                         width="143px"

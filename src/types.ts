@@ -1,1 +1,1 @@
-export type paymentTypes = 'mobile' | 'tv' | 'internet' | 'else'
+export type paymentTypes = 'mobile' | 'tv' | 'internet' | 'bank' | 'else'

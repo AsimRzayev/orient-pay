@@ -17,7 +17,7 @@ const breadcrumbs = [
 const Payments = () => {
     return (
         <div>
-            <PageLayout breadcrumbs={breadcrumbs}>
+            <PageLayout breadcrumbs={breadcrumbs} title="Ödənişlər">
                 <PaymentList />
             </PageLayout>
         </div>
