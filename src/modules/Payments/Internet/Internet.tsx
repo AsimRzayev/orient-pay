@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Internet = () => {
-    return <div>Internet</div>
+    return <div>Internet Form</div>
 }
 
 export default Internet

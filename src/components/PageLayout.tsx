@@ -11,7 +11,7 @@ export interface IBreadCrumbs {
 interface IProps {
     children: React.ReactElement
     breadcrumbs?: IBreadCrumbs[]
-    title: string
+    title?: string
 }
 const PageLayout: React.FC<IProps> = ({ children, breadcrumbs, title }) => {
     return (

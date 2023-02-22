@@ -10,7 +10,7 @@ const app = express()
 const port = 4000
 
 // parse application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 
 // parse application/json
 app.use(express.json())
@@ -19,8 +19,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS')
     res.header('Access-Control-Allow-Headers', '*')
-    res.header('Access-Control-Expose-Headers', 'Content-Length,Content-Range')
-    res.header('Access-Control-Allow-Credentials', 'true')
     next()
 })
 

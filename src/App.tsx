@@ -7,6 +7,8 @@ import Blogs from './modules/Blogs/Blogs'
 import Payments from './modules/Payments/Payments'
 import Error from './components/Error'
 import PaymentController from './modules/Payments/PaymentController'
+import PaymentFormController from './modules/Payments/PaymentFormController'
+import CardForm from './components/CardForm'
 
 function App() {
     return (
@@ -20,6 +22,11 @@ function App() {
                     path={ROUTES.PAYMENT_ITEM}
                     element={<PaymentController />}
                 />
+                <Route
+                    path={ROUTES.PAYMENT_FORM}
+                    element={<PaymentFormController />}
+                />
+                <Route path={ROUTES.PAYMENT_CARD_FORM} element={<CardForm />} />
 
                 <Route path="*" element={<Error />} />
             </Routes>

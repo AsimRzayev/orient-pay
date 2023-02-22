@@ -14,6 +14,10 @@ const navs: {
         text: 'Haqqımızda',
     },
     {
+        url: '/payments',
+        text: 'Ödənişlər',
+    },
+    {
         url: '/about',
         text: 'Xidmətlər',
     },

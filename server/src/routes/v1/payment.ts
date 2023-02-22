@@ -8,3 +8,10 @@ PaymentRouter.get('/:paymentType/list', (req, res) => {
 
     setTimeout(() => res.json(paymentList[paymentType]).sendStatus(200), 2000)
 })
+
+PaymentRouter.post('/form', (req, res) => {
+    setTimeout(
+        () => res.json({ url: 'https://beu.edu.az' }).sendStatus(200),
+        2000
+    )
+})

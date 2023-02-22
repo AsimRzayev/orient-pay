@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TV = () => {
-    return <div>TV</div>
+    return <div>TV Form</div>
 }
 
 export default TV

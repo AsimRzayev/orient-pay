@@ -37,7 +37,10 @@ const PaymentController = () => {
     return (
         <PageLayout title={pageTitle}>
             <Async isLoading={isLoading} isError={isError}>
-                <PaymentItemList paymentItems={paymentItems} />
+                <PaymentItemList
+                    paymentItems={paymentItems}
+                    paymentType={paymentType || 'mobile'}
+                />
             </Async>
         </PageLayout>
     )
