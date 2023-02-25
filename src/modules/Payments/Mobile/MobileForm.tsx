@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Input, Select, Stack } from '@chakra-ui/react'
+import {
+    Box,
+    Button,
+    Flex,
+    Input,
+    Select,
+    Spinner,
+    Stack,
+} from '@chakra-ui/react'
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import * as yup from 'yup'
@@ -7,6 +15,8 @@ import { usePaymentForm } from '../../../components/FormProvider'
 import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '../../../routes'
 import FormItem from '../../../components/lib/FormItem'
+import { useMutation } from '@tanstack/react-query'
+import { getPaymentURL } from '../../../services/paymentService'
 
 interface IFormData {
     prefix?: string
@@ -41,14 +51,20 @@ const MobileForm: React.FC<IProps> = ({ prefixs }) => {
     } = useForm<IFormData>({
         resolver: yupResolver(mobileSchema),
     })
-    const { setPaymentInfo } = usePaymentForm()
-
+    const { setPaymentInfo, setUrl } = usePaymentForm()
     const navigate = useNavigate()
+    const { mutate, isLoading } = useMutation(['getPayment'], getPaymentURL, {
+        onSuccess: (data) => {
+            setUrl(data.url)
+            navigate(ROUTES.PAYMENT_CARD_FORM)
+        },
+    })
+
     const handlePay = (data: IFormData) => {
         const newData = { ...data, mobile: data.prefix + data.mobile }
         delete newData.prefix
         setPaymentInfo(newData)
-        navigate(ROUTES.PAYMENT_CARD_FORM)
+        mutate(newData)
     }
 
     return (
@@ -139,8 +155,13 @@ const MobileForm: React.FC<IProps> = ({ prefixs }) => {
                         />
                     </FormItem>
                 </Box>
-                <Button type="submit" size="lg" colorScheme="blue">
-                    Davam et
+                <Button
+                    type="submit"
+                    disabled={isLoading}
+                    size="lg"
+                    colorScheme="blue"
+                >
+                    {isLoading ? <Spinner /> : 'Davam et'}
                 </Button>
                 <Button size="lg" colorScheme="gray">
                     Geri qayıt

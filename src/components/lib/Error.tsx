@@ -1,5 +1,4 @@
 import { Alert, AlertIcon, Flex } from '@chakra-ui/react'
-import React from 'react'
 
 const Error = () => {
     return (

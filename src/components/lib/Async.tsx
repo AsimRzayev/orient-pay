@@ -1,4 +1,5 @@
 import React from 'react'
+import Error from './Error'
 import Loading from './Loading'
 
 interface IProps {
@@ -11,7 +12,7 @@ const Async: React.FC<IProps> = ({ children, isError, isLoading }) => {
         return <Loading />
     }
     if (isError) {
-        return <h1>Error...</h1>
+        return <Error />
     }
 
     return children

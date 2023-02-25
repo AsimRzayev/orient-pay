@@ -5,10 +5,11 @@ import { ROUTES } from './routes'
 import Home from './modules/Home/Home'
 import Blogs from './modules/Blogs/Blogs'
 import Payments from './modules/Payments/Payments'
-import Error from './components/Error'
+import Error from './components/lib/Error'
 import PaymentController from './modules/Payments/PaymentController'
 import PaymentFormController from './modules/Payments/PaymentFormController'
 import CardForm from './components/CardForm'
+import PaymentResult from './components/Payment/PaymentResult'
 
 function App() {
     return (
@@ -27,6 +28,10 @@ function App() {
                     element={<PaymentFormController />}
                 />
                 <Route path={ROUTES.PAYMENT_CARD_FORM} element={<CardForm />} />
+                <Route
+                    path={ROUTES.PAYMENT_RESULT}
+                    element={<PaymentResult />}
+                />
 
                 <Route path="*" element={<Error />} />
             </Routes>

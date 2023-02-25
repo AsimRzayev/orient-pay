@@ -15,3 +15,22 @@ PaymentRouter.post('/form', (req, res) => {
         2000
     )
 })
+
+PaymentRouter.get('/:trans_id/result', (req, res) => {
+    setTimeout(
+        () =>
+            res
+                .json({
+                    result: 'ERROR',
+                    info: {
+                        service: 'BAKCELL',
+                        amount: 30,
+                        cardNumber: '5103071467985607',
+                        cardType: 'MasterCard',
+                        trans_id: '90',
+                    },
+                })
+                .sendStatus(200),
+        2000
+    )
+})

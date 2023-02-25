@@ -2,10 +2,14 @@ import React from 'react'
 import { IMobilePayment, ITVPayment } from '../types'
 
 interface IFormContext {
+    url: string
+    setUrl: (url: string) => void
     paymentInfo?: IMobilePayment | ITVPayment
     setPaymentInfo: (paymentInfo: IMobilePayment | ITVPayment) => void
 }
 const FormContext = React.createContext<IFormContext>({
+    url: '',
+    setUrl: (url = '') => undefined,
     setPaymentInfo: () => undefined,
     paymentInfo: {
         mobile: '',
@@ -28,9 +32,13 @@ export const FormProvider: React.FC<IProps> = ({ children }) => {
         cardType: '',
     })
 
+    const [url, setUrl] = React.useState('')
+
     return (
         <FormContext.Provider
             value={{
+                url: url,
+                setUrl: setUrl,
                 paymentInfo: paymentInfo,
                 setPaymentInfo: setPaymentInfo,
             }}
