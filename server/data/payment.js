@@ -1,10 +1,4 @@
-interface IPaymentItem {
-    logo: string
-    text: string
-}
-
-export type paymentTypes = 'mobile' | 'bank'
-export const paymentList: Record<paymentTypes, IPaymentItem[]> = {
+export const paymentList = {
     mobile: [
         {
             logo: 'https://fed.az/upload/news/56921.jpg',

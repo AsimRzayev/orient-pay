@@ -16,13 +16,17 @@ import Language from '../../components/Language'
 
 import { IoMdNotifications } from 'react-icons/io'
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs'
-const HeaderNavProfile = () => {
-    const hasUser = false
-
+interface IProps {
+    user: {
+        firstName: string
+        lastName: string
+    }
+}
+const HeaderNavProfile: React.FC<IProps> = ({ user }) => {
     return (
         <Flex alignItems="center" columnGap={2}>
             <Language />
-            {hasUser && (
+            {user && (
                 <>
                     <Button bg="white" position="relative">
                         <Icon
@@ -81,7 +85,7 @@ const HeaderNavProfile = () => {
                                         mt={1}
                                         ml={3}
                                     >
-                                        Manaf Ağayev
+                                        {user.firstName}&nbsp;{user.lastName}
                                     </Text>
                                 </MenuButton>
                                 <MenuList>

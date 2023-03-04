@@ -1,10 +1,11 @@
 import axios from 'axios'
 
-let baseURL: string = 'http://localhost:4000/user'
+let baseURL: string = 'http://localhost:4000/api/user'
+
 export async function getUser() {
-    const res = await axios.get('/hobbies', {
+    const res = await axios.get('', {
         baseURL: baseURL,
     })
 
-    return res.status
+    return res.data
 }
